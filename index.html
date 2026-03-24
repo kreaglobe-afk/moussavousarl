@@ -678,7 +678,9 @@
 
     &lt;!-- Form Container --&gt;
     &lt;div class=&quot;bg-white rounded-3xl shadow-2xl overflow-hidden&quot;&gt;
-      &lt;form data-landingsite-contact-form=&quot;&quot; class=&quot;space-y-8 p-8 sm:p-12&quot;&gt;
+      &lt;form action=&quot;https://formspree.io/f/xaqlwyyo&quot; method=&quot;POST&quot; class=&quot;space-y-8 p-8 sm:p-12&quot;&gt;
+        &lt;!-- Redirection automatique vers Chariow après paiement --&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;_next&quot; value=&quot;https://kaiioadz.mychariow.shop/prd_u70c3f/checkout&quot;&gt;
         &lt;!-- Contact Information Section --&gt;
         &lt;div class=&quot;border-b border-[var(--light-border-color)] pb-8&quot;&gt;
           &lt;h3 class=&quot;font-['Poppins'] text-xl font-bold text-[var(--dark-text-color)] mb-6 flex items-center gap-3&quot;&gt;
@@ -1024,13 +1026,15 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/footer&gt;
-&lt;/div&gt;&lt;/div&gt;&lt; script src=&quot;/embed/main.umd.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;script src=&quot;/embed/main.umd.js&quot;&gt;&lt;/script&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/body&gt;&lt;/html&gt;" style="width: 100%; height: 100%; top: 0px;"></iframe>
 <style>
   /* 1. On force l'affichage en plein écran sans bordures */
-  iframe, .frame-root, .frame-content {
+  iframe,
+  .frame-root,
+  .frame-content {
     border: none !important;
     outline: none !important;
     position: fixed !important;
@@ -1044,7 +1048,8 @@
   }
 
   /* 2. On s'assure que rien ne dépasse sur les côtés (anti-bug mobile) */
-  html, body {
+  html,
+  body {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
@@ -1053,7 +1058,9 @@
   }
 
   /* 3. On enlève les contours bleus de sélection du mode édition */
-  .hovered-element, .clicked-element, .clicked-code-section {
+  .hovered-element,
+  .clicked-element,
+  .clicked-code-section {
     outline: none !important;
     border: none !important;
   }
@@ -1061,11 +1068,11 @@
 
 <script>
   // Ce petit script permet au bouton "Menu" de fonctionner sur téléphone
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const btn = document.querySelector('[data-landingsite-mobile-menu-toggle]');
     const menu = document.querySelector('[data-landingsite-mobile-menu]');
     if (btn && menu) {
-      btn.onclick = function() {
+      btn.onclick = function () {
         menu.classList.toggle('hidden');
       };
     }
@@ -1073,7 +1080,9 @@
 </script>
 <style>
   /* Supprime le cadre et force le plein écran partout */
-  iframe, .frame-root, .frame-content {
+  iframe,
+  .frame-root,
+  .frame-content {
     border: none !important;
     position: fixed !important;
     top: 0 !important;
@@ -1085,23 +1094,26 @@
   }
 
   /* Empêche le site de bouger de gauche à droite sur téléphone */
-  html, body {
+  html,
+  body {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
     width: 100% !important;
     height: 100% !important;
-    position: fixed; /* Évite les rebonds bizarres sur mobile */
+    position: fixed;
+    /* Évite les rebonds bizarres sur mobile */
   }
 
   /* Cache les outils d'édition qui créent des bordures bleues */
-  .hovered-element, .clicked-element { 
-    outline: none !important; 
+  .hovered-element,
+  .clicked-element {
+    outline: none !important;
   }
 </style>
 
 <script>
-  (function() {
+  (function () {
     // 1. Force le "zoom" correct sur téléphone
     var meta = document.createElement('meta');
     meta.name = "viewport";
@@ -1109,7 +1121,7 @@
     document.getElementsByTagName('head')[0].appendChild(meta);
 
     // 2. Active le menu "Hamburger" pour le mobile
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       if (e.target.closest('[data-landingsite-mobile-menu-toggle]')) {
         var menu = document.querySelector('[data-landingsite-mobile-menu]');
         if (menu) {
@@ -1121,9 +1133,9 @@
     });
 
     // 3. Correction des images trop larges sur mobile
-    var fixImages = function() {
+    var fixImages = function () {
       var imgs = document.querySelectorAll('img');
-      imgs.forEach(function(img) {
+      imgs.forEach(function (img) {
         img.style.maxWidth = '100%';
         img.style.height = 'auto';
       });
