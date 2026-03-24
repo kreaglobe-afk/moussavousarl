@@ -56,7 +56,7 @@
 
       &lt;!-- Desktop Navigation --&gt;
       &lt;nav class=&quot;hidden lg:flex items-center space-x-8&quot;&gt;
-        &lt;a href=&quot;/&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200&quot;&gt;Accueil&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Accueil&lt;/a&gt;
         &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Comment ça fonctionne&lt;/a&gt;
         &lt;a href=&quot;#expertises&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Nos Expertises&lt;/a&gt;
         &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Pourquoi nous choisir&lt;/a&gt;
@@ -72,11 +72,11 @@
     &lt;!-- Mobile Navigation --&gt;
     &lt;nav data-landingsite-mobile-menu=&quot;&quot; class=&quot;hidden lg:hidden pb-4 border-t border-[var(--light-border-color)] mt-2&quot;&gt;
       &lt;div class=&quot;flex flex-col space-y-3 pt-4&quot;&gt;
-        &lt;a href=&quot;/&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Accueil&lt;/a&gt;
-        &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Comment ça fonctionne&lt;/a&gt;
-        &lt;a href=&quot;#expertises&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Nos Expertises&lt;/a&gt;
-        &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Pourquoi nous choisir&lt;/a&gt;
-        &lt;a href=&quot;#formulaire&quot; class=&quot;bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 shadow-lg&quot;&gt;Obtenir un Devis&lt;/a&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Accueil&lt;/a&gt;
+        &lt;a href=&quot;#comment-ca-marche&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Comment ça fonctionne&lt;/a&gt;
+        &lt;a href=&quot;#expertises&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Nos Expertises&lt;/a&gt;
+        &lt;a href=&quot;#pourquoi-nous-choisir&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Pourquoi nous choisir&lt;/a&gt;
+        &lt;a href=&quot;#formulaire&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 shadow-lg&quot;&gt;Obtenir un Devis&lt;/a&gt;
       &lt;/div&gt;
     &lt;/nav&gt;
   &lt;/div&gt;
@@ -912,31 +912,31 @@
       &lt;!-- Column 2: Services --&gt;
       &lt;div&gt;
         &lt;h3 class=&quot;font-['Poppins'] text-lg font-bold mb-6 text-white&quot;&gt;
-          Nos Services
+          Menu Principal
         &lt;/h3&gt;
         &lt;ul class=&quot;space-y-3&quot;&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/securite-electronique&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Sécurité Électronique&lt;/span&gt;
+              &lt;span&gt;Accueil&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/reseaux-telephoniques-informatiques&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Réseaux &amp;amp; Informatique&lt;/span&gt;
+              &lt;span&gt;Comment ça fonctionne&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/froid-et-climatisation&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#expertises&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Froid &amp;amp; Climatisation&lt;/span&gt;
+              &lt;span&gt;Nos Expertises&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/plomberie&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Plomberie&lt;/span&gt;
+              &lt;span&gt;Pourquoi nous choisir&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
@@ -949,7 +949,7 @@
         &lt;/h3&gt;
         &lt;ul class=&quot;space-y-3&quot;&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
               &lt;span&gt;Accueil&lt;/span&gt;
             &lt;/a&gt;
@@ -991,7 +991,7 @@
             &lt;i class=&quot;fas fa-phone text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
             &lt;div&gt;
               &lt;p class=&quot;font-semibold text-white&quot;&gt;Téléphone&lt;/p&gt;
-              &lt;a href=&quot;tel:+1234567890&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+123 456 7890&lt;/a&gt;
+              &lt;a href=&quot;tel:+241066565278&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 06 65 65 278&lt;/a&gt;
             &lt;/div&gt;
           &lt;/li&gt;
           &lt;li class=&quot;flex items-start gap-3 text-gray-400&quot;&gt;
@@ -1005,7 +1005,7 @@
             &lt;i class=&quot;fab fa-whatsapp text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
             &lt;div&gt;
               &lt;p class=&quot;font-semibold text-white&quot;&gt;WhatsApp&lt;/p&gt;
-              &lt;a href=&quot;https://wa.me/1234567890&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;Contactez-nous&lt;/a&gt;
+              &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 07 43 52 126&lt;/a&gt;
             &lt;/div&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
@@ -1025,6 +1025,10 @@
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+  &lt;!-- Floating WhatsApp Button --&gt;
+  &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50 text-decoration-none&quot;&gt;
+    &lt;i class=&quot;fab fa-whatsapp text-3xl&quot;&gt;&lt;/i&gt;
+  &lt;/a&gt;
 &lt;/footer&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;script src=&quot;/embed/main.umd.js&quot;&gt;&lt;/script&gt;
       &lt;/div&gt;
