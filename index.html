@@ -1029,6 +1029,36 @@
 &lt;/div&gt;&lt;/div&gt;&lt;script src=&quot;/embed/main.umd.js&quot;&gt;&lt;/script&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+
+    &lt;script&gt;
+      var frm = document.querySelector(&quot;form&quot;);
+      if (frm) {
+        frm.addEventListener(&quot;submit&quot;, function(e) {
+          e.preventDefault();
+          var btn = frm.querySelector(&apos;button[type=&quot;submit&quot;]&apos;);
+          var origHtml = btn ? btn.innerHTML : &apos;&apos;;
+          if(btn) {
+            btn.innerHTML = &apos;&lt;i class=&quot;fas fa-spinner fa-spin&quot;&gt;&lt;/i&gt; &lt;span&gt;Envoi en cours...&lt;/span&gt;&apos;;
+            btn.disabled = true;
+          }
+          fetch(&quot;https://formspree.io/f/xaqlwyyo&quot;, {
+            method: &quot;POST&quot;,
+            body: new FormData(frm),
+            headers: { &quot;Accept&quot;: &quot;application/json&quot; }
+          }).then(function(res) {
+            if (res.ok) {
+              window.top.location.href = &quot;https://kaiioadz.mychariow.shop/prd_u70c3f/checkout&quot;;
+            } else {
+              alert(&quot;Un problème est survenu. Veuillez réessayer.&quot;);
+              if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
+            }
+          }).catch(function(err) {
+            alert(&quot;Erreur réseau.&quot;);
+            if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
+          });
+        });
+      }
+    &lt;/script&gt;
   &lt;/body&gt;&lt;/html&gt;" style="width: 100%; height: 100%; top: 0px;"></iframe>
 <style>
   /* 1. On force l'affichage en plein écran sans bordures */
