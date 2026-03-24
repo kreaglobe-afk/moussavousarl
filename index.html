@@ -678,9 +678,9 @@
 
     &lt;!-- Form Container --&gt;
     &lt;div class=&quot;bg-white rounded-3xl shadow-2xl overflow-hidden&quot;&gt;
-      &lt;form action=&quot;https://formspree.io/f/xaqlwyyo&quot; method=&quot;POST&quot; class=&quot;space-y-8 p-8 sm:p-12&quot;&gt;
+      &lt;form data-landingsite-contact-form=&quot;&quot; action=&quot;https://formspree.io/f/xaqlwyyo&quot; method=&quot;POST&quot; class=&quot;space-y-8 p-8 sm:p-12&quot;&gt;
         &lt;!-- Redirection automatique vers Chariow après paiement --&gt;
-        &lt;input type=&quot;hidden&quot; name=&quot;_next&quot; value=&quot;https://kaiioadz.mychariow.shop/prd_u70c3f/checkout&quot;&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;_next&quot; value=&quot;https://kaiioadz.mychariow.shop/prd_u70c3f&quot;&gt;
         &lt;!-- Contact Information Section --&gt;
         &lt;div class=&quot;border-b border-[var(--light-border-color)] pb-8&quot;&gt;
           &lt;h3 class=&quot;font-['Poppins'] text-xl font-bold text-[var(--dark-text-color)] mb-6 flex items-center gap-3&quot;&gt;
@@ -1047,7 +1047,7 @@
             headers: { &quot;Accept&quot;: &quot;application/json&quot; }
           }).then(function(res) {
             if (res.ok) {
-              window.top.location.href = &quot;https://kaiioadz.mychariow.shop/prd_u70c3f/checkout&quot;;
+              window.top.location.href = &quot;https://kaiioadz.mychariow.shop/prd_u70c3f&quot;;
             } else {
               alert(&quot;Un problème est survenu. Veuillez réessayer.&quot;);
               if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
