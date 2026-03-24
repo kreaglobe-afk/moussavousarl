@@ -56,7 +56,7 @@
 
       &lt;!-- Desktop Navigation --&gt;
       &lt;nav class=&quot;hidden lg:flex items-center space-x-8&quot;&gt;
-        &lt;a href=&quot;#&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Accueil&lt;/a&gt;
+        &lt;a href=&quot;/&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200&quot;&gt;Accueil&lt;/a&gt;
         &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Comment ça fonctionne&lt;/a&gt;
         &lt;a href=&quot;#expertises&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Nos Expertises&lt;/a&gt;
         &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-200 scroll-smooth&quot;&gt;Pourquoi nous choisir&lt;/a&gt;
@@ -72,11 +72,11 @@
     &lt;!-- Mobile Navigation --&gt;
     &lt;nav data-landingsite-mobile-menu=&quot;&quot; class=&quot;hidden lg:hidden pb-4 border-t border-[var(--light-border-color)] mt-2&quot;&gt;
       &lt;div class=&quot;flex flex-col space-y-3 pt-4&quot;&gt;
-        &lt;a href=&quot;#&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Accueil&lt;/a&gt;
-        &lt;a href=&quot;#comment-ca-marche&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Comment ça fonctionne&lt;/a&gt;
-        &lt;a href=&quot;#expertises&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Nos Expertises&lt;/a&gt;
-        &lt;a href=&quot;#pourquoi-nous-choisir&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Pourquoi nous choisir&lt;/a&gt;
-        &lt;a href=&quot;#formulaire&quot; onclick=&quot;document.querySelector('[data-landingsite-mobile-menu]').classList.add('hidden')&quot; class=&quot;bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 shadow-lg&quot;&gt;Obtenir un Devis&lt;/a&gt;
+        &lt;a href=&quot;/&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Accueil&lt;/a&gt;
+        &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Comment ça fonctionne&lt;/a&gt;
+        &lt;a href=&quot;#expertises&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Nos Expertises&lt;/a&gt;
+        &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-[var(--gray-text-color)] hover:text-[var(--primary-color)] font-medium py-2 transition-colors duration-200&quot;&gt;Pourquoi nous choisir&lt;/a&gt;
+        &lt;a href=&quot;#formulaire&quot; class=&quot;bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-200 shadow-lg&quot;&gt;Obtenir un Devis&lt;/a&gt;
       &lt;/div&gt;
     &lt;/nav&gt;
   &lt;/div&gt;
@@ -356,7 +356,7 @@
             &lt;/li&gt;
           &lt;/ul&gt;
 
-          &lt;a href=&quot;#formulaire&quot; class=&quot;inline-flex items-center gap-2 text-[var(--primary-color)] font-semibold hover:gap-4 transition-all duration-300&quot;&gt;
+          &lt;a href=&quot;#&quot; onclick=&quot;event.preventDefault(); openExpertiseModal('securite')&quot; class=&quot;inline-flex items-center gap-2 text-[var(--primary-color)] font-semibold hover:gap-4 transition-all duration-300 cursor-pointer&quot;&gt;
             &lt;span&gt;En savoir plus&lt;/span&gt;
             &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
           &lt;/a&gt;
@@ -401,7 +401,7 @@
             &lt;/li&gt;
           &lt;/ul&gt;
 
-          &lt;a href=&quot;#formulaire&quot; class=&quot;inline-flex items-center gap-2 text-[var(--accent-color)] font-semibold hover:gap-4 transition-all duration-300&quot;&gt;
+          &lt;a href=&quot;#&quot; onclick=&quot;event.preventDefault(); openExpertiseModal('reseaux')&quot; class=&quot;inline-flex items-center gap-2 text-[var(--accent-color)] font-semibold hover:gap-4 transition-all duration-300 cursor-pointer&quot;&gt;
             &lt;span&gt;En savoir plus&lt;/span&gt;
             &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
           &lt;/a&gt;
@@ -447,7 +447,7 @@
             &lt;/li&gt;
           &lt;/ul&gt;
 
-          &lt;a href=&quot;#formulaire&quot; class=&quot;inline-flex items-center gap-2 text-[var(--accent3-color)] font-semibold hover:gap-4 transition-all duration-300&quot;&gt;
+          &lt;a href=&quot;#&quot; onclick=&quot;event.preventDefault(); openExpertiseModal('froid')&quot; class=&quot;inline-flex items-center gap-2 text-[var(--accent3-color)] font-semibold hover:gap-4 transition-all duration-300 cursor-pointer&quot;&gt;
             &lt;span&gt;En savoir plus&lt;/span&gt;
             &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
           &lt;/a&gt;
@@ -493,7 +493,7 @@
             &lt;/li&gt;
           &lt;/ul&gt;
 
-          &lt;a href=&quot;#formulaire&quot; class=&quot;inline-flex items-center gap-2 text-[var(--accent2-color)] font-semibold hover:gap-4 transition-all duration-300&quot;&gt;
+          &lt;a href=&quot;#&quot; onclick=&quot;event.preventDefault(); openExpertiseModal('plomberie')&quot; class=&quot;inline-flex items-center gap-2 text-[var(--accent2-color)] font-semibold hover:gap-4 transition-all duration-300 cursor-pointer&quot;&gt;
             &lt;span&gt;En savoir plus&lt;/span&gt;
             &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
           &lt;/a&gt;
@@ -659,6 +659,72 @@
   &lt;/div&gt;
 &lt;/section&gt;
 
+&lt;div id=&quot;expertiseModal&quot; class=&quot;code-section hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/70 backdrop-blur-sm&quot;&gt;
+  &lt;div class=&quot;bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto&quot;&gt;
+    &lt;!-- Modal Header --&gt;
+    &lt;div class=&quot;p-6 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white rounded-t-3xl&quot;&gt;
+      &lt;div class=&quot;flex items-center gap-4&quot;&gt;
+        &lt;div class=&quot;modal-icon w-14 h-14 bg-gradient-to-br from-[var(--primary-color)] to-[var(--accent3-color)] rounded-xl flex items-center justify-center shadow-lg&quot;&gt;
+          &lt;i class=&quot;fas fa-video text-2xl text-white&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;h3 class=&quot;modal-title font-['Poppins'] text-xl font-bold text-[var(--dark-text-color)]&quot;&gt;
+          Titre du service
+        &lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;button type=&quot;button&quot; class=&quot;modal-close-btn w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200&quot;&gt;
+        &lt;i class=&quot;fas fa-times text-gray-600&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Modal Body --&gt;
+    &lt;div class=&quot;p-6&quot;&gt;
+      &lt;!-- Description --&gt;
+      &lt;p class=&quot;modal-description text-[var(--gray-text-color)] leading-relaxed mb-6&quot;&gt;
+        Description du service...
+      &lt;/p&gt;
+
+      &lt;!-- Features List --&gt;
+      &lt;div class=&quot;mb-6&quot;&gt;
+        &lt;h4 class=&quot;font-semibold text-[var(--dark-text-color)] mb-4 flex items-center gap-2&quot;&gt;
+          &lt;i class=&quot;fas fa-list-check text-[var(--primary-color)]&quot;&gt;&lt;/i&gt;
+          Nos prestations incluses :
+        &lt;/h4&gt;
+        &lt;ul class=&quot;modal-features space-y-3&quot;&gt;
+          &lt;li class=&quot;flex items-start gap-3&quot;&gt;
+            &lt;i class=&quot;fas fa-check-circle text-[var(--accent4-color)] mt-1&quot;&gt;&lt;/i&gt;
+            &lt;span class=&quot;text-[var(--gray-text-color)]&quot;&gt;Feature 1&lt;/span&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Price Indicator --&gt;
+      &lt;div class=&quot;bg-gradient-to-r from-[var(--primary-color)]/10 to-[var(--accent3-color)]/10 rounded-xl p-4 mb-6&quot;&gt;
+        &lt;div class=&quot;flex items-center gap-3&quot;&gt;
+          &lt;i class=&quot;fas fa-tag text-[var(--primary-color)] text-xl&quot;&gt;&lt;/i&gt;
+          &lt;div&gt;
+            &lt;p class=&quot;text-sm text-[var(--gray-text-color)]&quot;&gt;Investissement&lt;/p&gt;
+            &lt;p class=&quot;modal-price font-bold text-lg text-[var(--dark-text-color)]&quot;&gt;
+              Prix
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- CTA --&gt;
+      &lt;div class=&quot;flex flex-col sm:flex-row gap-3&quot;&gt;
+        &lt;a href=&quot;#formulaire&quot; onclick=&quot;closeExpertiseModal()&quot; class=&quot;flex-1 bg-[var(--primary-color)] text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 flex items-center justify-center gap-2&quot;&gt;
+          &lt;span&gt;Demander un Devis&lt;/span&gt;
+          &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;a href=&quot;https://wa.me/241077123456&quot; target=&quot;_blank&quot; class=&quot;flex-1 bg-[#25D366] text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-[#128C7E] transition-all duration-300 flex items-center justify-center gap-2&quot;&gt;
+          &lt;i class=&quot;fab fa-whatsapp text-xl&quot;&gt;&lt;/i&gt;
+          &lt;span&gt;WhatsApp&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;section class=&quot;code-section bg-[var(--light-background-color)] py-20 sm:py-28&quot; id=&quot;formulaire&quot;&gt;
   &lt;div class=&quot;max-w-5xl mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;
     &lt;!-- Section Header --&gt;
@@ -679,8 +745,6 @@
     &lt;!-- Form Container --&gt;
     &lt;div class=&quot;bg-white rounded-3xl shadow-2xl overflow-hidden&quot;&gt;
       &lt;form data-landingsite-contact-form=&quot;&quot; action=&quot;https://formspree.io/f/xaqlwyyo&quot; method=&quot;POST&quot; class=&quot;space-y-8 p-8 sm:p-12&quot;&gt;
-        &lt;!-- Redirection automatique vers Chariow après paiement --&gt;
-        &lt;input type=&quot;hidden&quot; name=&quot;_next&quot; value=&quot;https://kaiioadz.mychariow.shop/prd_u70c3f&quot;&gt;
         &lt;!-- Contact Information Section --&gt;
         &lt;div class=&quot;border-b border-[var(--light-border-color)] pb-8&quot;&gt;
           &lt;h3 class=&quot;font-['Poppins'] text-xl font-bold text-[var(--dark-text-color)] mb-6 flex items-center gap-3&quot;&gt;
@@ -892,90 +956,63 @@
           Votre partenaire de confiance pour tous vos besoins en sécurité
           électronique, réseaux, climatisation et plomberie.
         &lt;/p&gt;
-        &lt;!-- Social Media --&gt;
-        &lt;div class=&quot;flex gap-4&quot;&gt;
-          &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110&quot;&gt;
-            &lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;
-          &lt;/a&gt;
-          &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110&quot;&gt;
-            &lt;i class=&quot;fab fa-linkedin-in&quot;&gt;&lt;/i&gt;
-          &lt;/a&gt;
-          &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110&quot;&gt;
-            &lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;
-          &lt;/a&gt;
-          &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110&quot;&gt;
-            &lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;
-          &lt;/a&gt;
-        &lt;/div&gt;
       &lt;/div&gt;
 
       &lt;!-- Column 2: Services --&gt;
       &lt;div&gt;
         &lt;h3 class=&quot;font-['Poppins'] text-lg font-bold mb-6 text-white&quot;&gt;
-          Menu Principal
+          Web Services
         &lt;/h3&gt;
         &lt;ul class=&quot;space-y-3&quot;&gt;
           &lt;li&gt;
-            &lt;a href=&quot;#&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#expertises&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Accueil&lt;/span&gt;
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
-              &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Comment ça fonctionne&lt;/span&gt;
+              &lt;span&gt;Sécurité Électronique&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
             &lt;a href=&quot;#expertises&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Nos Expertises&lt;/span&gt;
+              &lt;span&gt;Réseaux &amp;amp; Informatique&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#expertises&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Pourquoi nous choisir&lt;/span&gt;
+              &lt;span&gt;Froid &amp;amp; Climatisation&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&quot;#expertises&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+              &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
+              &lt;span&gt;Plomberie&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/div&gt;
 
-      &lt;!-- Column 3: Liens Rapides --&gt;
+      &lt;!-- Column 3: Head Contractor --&gt;
       &lt;div&gt;
         &lt;h3 class=&quot;font-['Poppins'] text-lg font-bold mb-6 text-white&quot;&gt;
-          Liens Rapides
+          Moussavousarl
         &lt;/h3&gt;
         &lt;ul class=&quot;space-y-3&quot;&gt;
           &lt;li&gt;
-            &lt;a href=&quot;#&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#formulaire&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Accueil&lt;/span&gt;
+              &lt;span&gt;Demande de Devis&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/produits&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#comment-ca-marche&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Produits&lt;/span&gt;
+              &lt;span&gt;Comment ça Marche&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;a href=&quot;/devis-en-ligne&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
+            &lt;a href=&quot;#pourquoi-nous-choisir&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
               &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Devis en Ligne&lt;/span&gt;
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;a href=&quot;/espace-client&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
-              &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Espace Client&lt;/span&gt;
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;a href=&quot;/contact&quot; class=&quot;text-gray-400 hover:text-[var(--accent3-color)] transition-colors duration-200 flex items-center gap-2&quot;&gt;
-              &lt;i class=&quot;fas fa-chevron-right text-xs&quot;&gt;&lt;/i&gt;
-              &lt;span&gt;Contact&lt;/span&gt;
+              &lt;span&gt;Pourquoi Nous Choisir&lt;/span&gt;
             &lt;/a&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
@@ -984,28 +1021,38 @@
       &lt;!-- Column 4: Contact Info --&gt;
       &lt;div&gt;
         &lt;h3 class=&quot;font-['Poppins'] text-lg font-bold mb-6 text-white&quot;&gt;
-          Nous Contacter
+          Contact
         &lt;/h3&gt;
+        &lt;!-- Social Media &amp; Contact Buttons --&gt;
+        &lt;div class=&quot;flex flex-wrap gap-3 mb-6&quot;&gt;
+          &lt;a href=&quot;tel:+241077123456&quot; class=&quot;flex items-center gap-2 bg-[var(--primary-color)] hover:bg-[var(--primary-button-hover-bg-color)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300&quot;&gt;
+            &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Appeler&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;a href=&quot;https://wa.me/241077123456&quot; target=&quot;_blank&quot; class=&quot;flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300&quot;&gt;
+            &lt;i class=&quot;fab fa-whatsapp text-lg&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;WhatsApp&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;!-- Contact Details --&gt;
         &lt;ul class=&quot;space-y-4&quot;&gt;
           &lt;li class=&quot;flex items-start gap-3 text-gray-400&quot;&gt;
             &lt;i class=&quot;fas fa-phone text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
             &lt;div&gt;
-              &lt;p class=&quot;font-semibold text-white&quot;&gt;Téléphone&lt;/p&gt;
-              &lt;a href=&quot;tel:+241066565278&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 06 65 65 278&lt;/a&gt;
+              &lt;a href=&quot;tel:+241077123456&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 07 71 23 456&lt;/a&gt;
             &lt;/div&gt;
           &lt;/li&gt;
           &lt;li class=&quot;flex items-start gap-3 text-gray-400&quot;&gt;
             &lt;i class=&quot;fas fa-envelope text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
             &lt;div&gt;
-              &lt;p class=&quot;font-semibold text-white&quot;&gt;Email&lt;/p&gt;
               &lt;a href=&quot;mailto:contact@moussavousarl.com&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;contact@moussavousarl.com&lt;/a&gt;
             &lt;/div&gt;
           &lt;/li&gt;
           &lt;li class=&quot;flex items-start gap-3 text-gray-400&quot;&gt;
-            &lt;i class=&quot;fab fa-whatsapp text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
+            &lt;i class=&quot;fas fa-clock text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
             &lt;div&gt;
-              &lt;p class=&quot;font-semibold text-white&quot;&gt;WhatsApp&lt;/p&gt;
-              &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 07 43 52 126&lt;/a&gt;
+              &lt;p&gt;Lun - Sam: 8h - 18h&lt;/p&gt;
+              &lt;p class=&quot;text-sm&quot;&gt;Dim: Urgence uniquement&lt;/p&gt;
             &lt;/div&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
@@ -1025,15 +1072,14 @@
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;!-- Floating WhatsApp Button --&gt;
-  &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50 text-decoration-none&quot;&gt;
+  &lt;!-- Bouton WhatsApp Flottant --&gt;
+  &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50&quot; style=&quot;text-decoration:none;&quot;&gt;
     &lt;i class=&quot;fab fa-whatsapp text-3xl&quot;&gt;&lt;/i&gt;
   &lt;/a&gt;
 &lt;/footer&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;script src=&quot;/embed/main.umd.js&quot;&gt;&lt;/script&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-
     &lt;script&gt;
       var frm = document.querySelector(&quot;form&quot;);
       if (frm) {
