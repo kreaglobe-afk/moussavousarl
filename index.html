@@ -21,7 +21,7 @@
     &lt;style&gt;
 
 .hovered-element {
-  outline: #3871E0 dashed 2px;a
+  outline: #3871E0 dashed 2px;
 }
 
 .clicked-element {
@@ -1205,79 +1205,113 @@
 </style>
 
 <script>
-  // Ce petit script permet au bouton "Menu" de fonctionner sur téléphone
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.querySelector('[data-landingsite-mobile-menu-toggle]');
-    const menu = document.querySelector('[data-landingsite-mobile-menu]');
-    if (btn && menu) {
-      btn.onclick = function () {
-        menu.classList.toggle('hidden');
-      };
-    }
-  });
-</script>
-<style>
-  /* Supprime le cadre et force le plein écran partout */
-  iframe,
-  .frame-root,
-  .frame-content {
-    border: none !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    z-index: 9999;
-  }
-
-  /* Empêche le site de bouger de gauche à droite sur téléphone */
-  html,
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
-    width: 100% !important;
-    height: 100% !important;
-    position: fixed;
-    /* Évite les rebonds bizarres sur mobile */
-  }
-
-  /* Cache les outils d'édition qui créent des bordures bleues */
-  .hovered-element,
-  .clicked-element {
-    outline: none !important;
-  }
-</style>
-
-<script>
   (function () {
-    // 1. Force le "zoom" correct sur téléphone
-    var meta = document.createElement('meta');
-    meta.name = "viewport";
-    meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    var iframe = document.querySelector('iframe');
+    if (!iframe) return;
 
-    // 2. Active le menu "Hamburger" pour le mobile
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('[data-landingsite-mobile-menu-toggle]')) {
-        var menu = document.querySelector('[data-landingsite-mobile-menu]');
-        if (menu) {
-          menu.classList.toggle('hidden');
-          menu.style.display = menu.classList.contains('hidden') ? 'none' : 'block';
-          menu.style.backgroundColor = 'white'; // Assure la visibilité
+    function setup() {
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.body) { setTimeout(setup, 200); return; }
+
+      // === 1. SMOOTH SCROLL pour TOUS les liens ancre ===
+      doc.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var id = link.getAttribute('href').substring(1);
+        if (!id) { doc.documentElement.scrollTo({ top: 0, behavior: 'smooth' }); e.preventDefault(); return; }
+        var target = doc.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }
-    });
-
-    // 3. Correction des images trop larges sur mobile
-    var fixImages = function () {
-      var imgs = document.querySelectorAll('img');
-      imgs.forEach(function (img) {
-        img.style.maxWidth = '100%';
-        img.style.height = 'auto';
       });
-    };
-    window.onload = fixImages;
+
+      // === 2. Lien Accueil (/) => scroll en haut ===
+      doc.querySelectorAll('a[href="/"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          doc.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      // === 3. MENU MOBILE toggle + auto-fermeture ===
+      var menuBtn = doc.querySelector('[data-landingsite-mobile-menu-toggle]');
+      var mobileMenu = doc.querySelector('[data-landingsite-mobile-menu]');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+
+      // === 4. EXPERTISE MODAL ===
+      var modalData = {
+        securite: { title: 'Sécurité Électronique', icon: 'fa-video', desc: 'Systèmes de vidéosurveillance CCTV, alarmes anti-intrusion, contrôle d\'accès biométrique et interphones connectés.', features: ['Caméras IP et analogiques', 'Alarmes sans fil et filaires', 'Contrôle d\'accès intelligent', 'Interphones et visiophones'], price: 'À partir de 150 000 FCFA' },
+        reseaux: { title: 'Réseaux Téléphoniques et Informatiques', icon: 'fa-network-wired', desc: 'Infrastructure réseau LAN/WAN, câblage structuré, téléphonie VoIP et solutions cloud.', features: ['Installation réseau et câblage', 'Téléphonie IP professionnelle', 'Maintenance et dépannage', 'Solutions cloud'], price: 'À partir de 100 000 FCFA' },
+        froid: { title: 'Froid et Climatisation', icon: 'fa-snowflake', desc: 'Installation, entretien préventif, dépannage d\'urgence et solutions frigorifiques.', features: ['Climatisation et CVC', 'Entretien périodique', 'Dépannage 24/7', 'Solutions frigorifiques'], price: 'À partir de 80 000 FCFA' },
+        plomberie: { title: 'Plomberie Professionnelle', icon: 'fa-wrench', desc: 'Installation sanitaire, réparation de fuites, débouchage et maintenance préventive.', features: ['Installation et rénovation', 'Dépannage d\'urgence', 'Maintenance préventive', 'Débouchage professionnel'], price: 'À partir de 50 000 FCFA' }
+      };
+
+      iframe.contentWindow.openExpertiseModal = function (key) {
+        var d = modalData[key]; if (!d) return;
+        var modal = doc.getElementById('expertiseModal');
+        modal.querySelector('.modal-title').textContent = d.title;
+        modal.querySelector('.modal-icon i').className = 'fas ' + d.icon + ' text-2xl text-white';
+        modal.querySelector('.modal-description').textContent = d.desc;
+        modal.querySelector('.modal-price').textContent = d.price;
+        var ul = modal.querySelector('.modal-features'); ul.innerHTML = '';
+        d.features.forEach(function (f) { ul.innerHTML += '<li class="flex items-start gap-3"><i class="fas fa-check-circle text-[var(--accent4-color)] mt-1"></i><span class="text-[var(--gray-text-color)]">' + f + '</span></li>'; });
+        modal.classList.remove('hidden'); modal.style.display = 'flex';
+      };
+
+      iframe.contentWindow.closeExpertiseModal = function () {
+        var modal = doc.getElementById('expertiseModal');
+        modal.classList.add('hidden'); modal.style.display = 'none';
+      };
+
+      var closeBtn = doc.querySelector('.modal-close-btn');
+      if (closeBtn) closeBtn.addEventListener('click', function () { iframe.contentWindow.closeExpertiseModal(); });
+      var expertiseModal = doc.getElementById('expertiseModal');
+      if (expertiseModal) expertiseModal.addEventListener('click', function (e) { if (e.target === this) iframe.contentWindow.closeExpertiseModal(); });
+
+      // === 5. FORMSPREE + Redirection CHARIOW ===
+      var frm = doc.querySelector('form');
+      if (frm) {
+        frm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var btn = frm.querySelector('button[type="submit"]');
+          var origHtml = btn ? btn.innerHTML : '';
+          if (btn) {
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Envoi en cours...</span>';
+            btn.disabled = true;
+          }
+          fetch('https://formspree.io/f/xaqlwyyo', {
+            method: 'POST',
+            body: new FormData(frm),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (res) {
+            if (res.ok) {
+              window.top.location.href = 'https://kaiioadz.mychariow.shop/prd_u70c3f';
+            } else {
+              alert('Un problème est survenu. Veuillez réessayer.');
+              if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
+            }
+          }).catch(function (err) {
+            alert('Erreur réseau.');
+            if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
+          });
+        });
+      }
+
+      // === 6. Smooth scroll CSS ===
+      doc.documentElement.style.scrollBehavior = 'smooth';
+    }
+
+    iframe.addEventListener('load', setup);
+    if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') setup();
   })();
 </script>
