@@ -1,4 +1,4 @@
-<iframe class="absolute bg-white" srcdoc="&lt;html class=&quot;h-full&quot; lang=&quot;en&quot;&gt;&lt;head&gt;
+<iframe class="absolute bg-white" srcdoc="&lt;html class=&quot;h-full&quot; lang=&quot;en&quot; style=&quot;scroll-behavior:smooth&quot;&gt;&lt;head&gt;
     &lt;meta charSet=&quot;UTF-8&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
     &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;
@@ -21,7 +21,7 @@
     &lt;style&gt;
 
 .hovered-element {
-  outline: #3871E0 dashed 2px;
+  outline: #3871E0 dashed 2px;a
 }
 
 .clicked-element {
@@ -716,7 +716,7 @@
           &lt;span&gt;Demander un Devis&lt;/span&gt;
           &lt;i class=&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
         &lt;/a&gt;
-        &lt;a href=&quot;https://wa.me/241077123456&quot; target=&quot;_blank&quot; class=&quot;flex-1 bg-[#25D366] text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-[#128C7E] transition-all duration-300 flex items-center justify-center gap-2&quot;&gt;
+        &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;flex-1 bg-[#25D366] text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-[#128C7E] transition-all duration-300 flex items-center justify-center gap-2&quot;&gt;
           &lt;i class=&quot;fab fa-whatsapp text-xl&quot;&gt;&lt;/i&gt;
           &lt;span&gt;WhatsApp&lt;/span&gt;
         &lt;/a&gt;
@@ -1025,11 +1025,11 @@
         &lt;/h3&gt;
         &lt;!-- Social Media &amp; Contact Buttons --&gt;
         &lt;div class=&quot;flex flex-wrap gap-3 mb-6&quot;&gt;
-          &lt;a href=&quot;tel:+241077123456&quot; class=&quot;flex items-center gap-2 bg-[var(--primary-color)] hover:bg-[var(--primary-button-hover-bg-color)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300&quot;&gt;
+          &lt;a href=&quot;tel:+241066565278&quot; class=&quot;flex items-center gap-2 bg-[var(--primary-color)] hover:bg-[var(--primary-button-hover-bg-color)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300&quot;&gt;
             &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
             &lt;span&gt;Appeler&lt;/span&gt;
           &lt;/a&gt;
-          &lt;a href=&quot;https://wa.me/241077123456&quot; target=&quot;_blank&quot; class=&quot;flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300&quot;&gt;
+          &lt;a href=&quot;https://wa.me/241074352126&quot; target=&quot;_blank&quot; class=&quot;flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300&quot;&gt;
             &lt;i class=&quot;fab fa-whatsapp text-lg&quot;&gt;&lt;/i&gt;
             &lt;span&gt;WhatsApp&lt;/span&gt;
           &lt;/a&gt;
@@ -1039,7 +1039,7 @@
           &lt;li class=&quot;flex items-start gap-3 text-gray-400&quot;&gt;
             &lt;i class=&quot;fas fa-phone text-[var(--accent3-color)] mt-1&quot;&gt;&lt;/i&gt;
             &lt;div&gt;
-              &lt;a href=&quot;tel:+241077123456&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 07 71 23 456&lt;/a&gt;
+              &lt;a href=&quot;tel:+241066565278&quot; class=&quot;hover:text-[var(--accent3-color)] transition-colors duration-200&quot;&gt;+241 06 65 65 278&lt;/a&gt;
             &lt;/div&gt;
           &lt;/li&gt;
           &lt;li class=&quot;flex items-start gap-3 text-gray-400&quot;&gt;
@@ -1081,9 +1081,67 @@
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;script&gt;
-      var frm = document.querySelector(&quot;form&quot;);
+      /* === 1. SMOOTH SCROLL pour TOUS les liens ancre === */
+      document.addEventListener(&apos;click&apos;, function(e) {
+        var link = e.target.closest(&apos;a[href^=&quot;#&quot;]&apos;);
+        if (!link) return;
+        var id = link.getAttribute(&apos;href&apos;).substring(1);
+        if (!id) { window.scrollTo({top:0,behavior:&apos;smooth&apos;}); e.preventDefault(); return; }
+        var target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({behavior:&apos;smooth&apos;,block:&apos;start&apos;});
+        }
+      });
+      /* === 2. Lien Accueil (/) => scroll en haut === */
+      document.querySelectorAll(&apos;a[href=&quot;/&quot;]&apos;).forEach(function(a){
+        a.addEventListener(&apos;click&apos;, function(e){
+          e.preventDefault();
+          window.scrollTo({top:0,behavior:&apos;smooth&apos;});
+        });
+      });
+      /* === 3. MENU MOBILE toggle + auto-fermeture === */
+      var menuBtn = document.querySelector(&apos;[data-landingsite-mobile-menu-toggle]&apos;);
+      var mobileMenu = document.querySelector(&apos;[data-landingsite-mobile-menu]&apos;);
+      if (menuBtn &amp;amp;&amp;amp; mobileMenu) {
+        menuBtn.addEventListener(&apos;click&apos;, function(){
+          mobileMenu.classList.toggle(&apos;hidden&apos;);
+        });
+        mobileMenu.querySelectorAll(&apos;a&apos;).forEach(function(a){
+          a.addEventListener(&apos;click&apos;, function(){
+            mobileMenu.classList.add(&apos;hidden&apos;);
+          });
+        });
+      }
+      /* === 4. EXPERTISE MODAL === */
+      var modalData = {
+        securite: { title:&apos;Sécurité Électronique&apos;, icon:&apos;fa-video&apos;, desc:&apos;Systèmes de vidéosurveillance CCTV, alarmes anti-intrusion, contrôle d\'accès biométrique et interphones connectés.&apos;, features:[&apos;Caméras IP et analogiques&apos;,&apos;Alarmes sans fil et filaires&apos;,&apos;Contrôle d\'accès intelligent&apos;,&apos;Interphones et visiophones&apos;], price:&apos;À partir de 150 000 FCFA&apos; },
+        reseaux: { title:&apos;Réseaux Téléphoniques et Informatiques&apos;, icon:&apos;fa-network-wired&apos;, desc:&apos;Infrastructure réseau LAN/WAN, câblage structuré, téléphonie VoIP et solutions cloud.&apos;, features:[&apos;Installation réseau et câblage&apos;,&apos;Téléphonie IP professionnelle&apos;,&apos;Maintenance et dépannage&apos;,&apos;Solutions cloud&apos;], price:&apos;À partir de 100 000 FCFA&apos; },
+        froid: { title:&apos;Froid et Climatisation&apos;, icon:&apos;fa-snowflake&apos;, desc:&apos;Installation, entretien préventif, dépannage d\'urgence et solutions frigorifiques.&apos;, features:[&apos;Climatisation et CVC&apos;,&apos;Entretien périodique&apos;,&apos;Dépannage 24/7&apos;,&apos;Solutions frigorifiques&apos;], price:&apos;À partir de 80 000 FCFA&apos; },
+        plomberie: { title:&apos;Plomberie Professionnelle&apos;, icon:&apos;fa-wrench&apos;, desc:&apos;Installation sanitaire, réparation de fuites, débouchage et maintenance préventive.&apos;, features:[&apos;Installation et rénovation&apos;,&apos;Dépannage d\'urgence&apos;,&apos;Maintenance préventive&apos;,&apos;Débouchage professionnel&apos;], price:&apos;À partir de 50 000 FCFA&apos; }
+      };
+      window.openExpertiseModal = function(key) {
+        var d = modalData[key]; if(!d) return;
+        var modal = document.getElementById(&apos;expertiseModal&apos;);
+        modal.querySelector(&apos;.modal-title&apos;).textContent = d.title;
+        modal.querySelector(&apos;.modal-icon i&apos;).className = &apos;fas &apos; + d.icon + &apos; text-2xl text-white&apos;;
+        modal.querySelector(&apos;.modal-description&apos;).textContent = d.desc;
+        modal.querySelector(&apos;.modal-price&apos;).textContent = d.price;
+        var ul = modal.querySelector(&apos;.modal-features&apos;); ul.innerHTML = &apos;&apos;;
+        d.features.forEach(function(f){ ul.innerHTML += &apos;&lt;li class=&quot;flex items-start gap-3&quot;&gt;&lt;i class=&quot;fas fa-check-circle text-[var(--accent4-color)] mt-1&quot;&gt;&lt;/i&gt;&lt;span class=&quot;text-[var(--gray-text-color)]&quot;&gt;&apos;+f+&apos;&lt;/span&gt;&lt;/li&gt;&apos;; });
+        modal.classList.remove(&apos;hidden&apos;); modal.style.display=&apos;flex&apos;;
+      };
+      window.closeExpertiseModal = function() {
+        var modal = document.getElementById(&apos;expertiseModal&apos;);
+        modal.classList.add(&apos;hidden&apos;); modal.style.display=&apos;none&apos;;
+      };
+      var closeBtn = document.querySelector(&apos;.modal-close-btn&apos;);
+      if(closeBtn) closeBtn.addEventListener(&apos;click&apos;, closeExpertiseModal);
+      document.getElementById(&apos;expertiseModal&apos;).addEventListener(&apos;click&apos;, function(e){ if(e.target===this) closeExpertiseModal(); });
+      /* === 5. FORMSPREE + Redirection CHARIOW === */
+      var frm = document.querySelector(&apos;form&apos;);
       if (frm) {
-        frm.addEventListener(&quot;submit&quot;, function(e) {
+        frm.addEventListener(&apos;submit&apos;, function(e) {
           e.preventDefault();
           var btn = frm.querySelector(&apos;button[type=&quot;submit&quot;]&apos;);
           var origHtml = btn ? btn.innerHTML : &apos;&apos;;
@@ -1091,19 +1149,19 @@
             btn.innerHTML = &apos;&lt;i class=&quot;fas fa-spinner fa-spin&quot;&gt;&lt;/i&gt; &lt;span&gt;Envoi en cours...&lt;/span&gt;&apos;;
             btn.disabled = true;
           }
-          fetch(&quot;https://formspree.io/f/xaqlwyyo&quot;, {
-            method: &quot;POST&quot;,
+          fetch(&apos;https://formspree.io/f/xaqlwyyo&apos;, {
+            method: &apos;POST&apos;,
             body: new FormData(frm),
-            headers: { &quot;Accept&quot;: &quot;application/json&quot; }
+            headers: { &apos;Accept&apos;: &apos;application/json&apos; }
           }).then(function(res) {
             if (res.ok) {
-              window.top.location.href = &quot;https://kaiioadz.mychariow.shop/prd_u70c3f&quot;;
+              window.top.location.href = &apos;https://kaiioadz.mychariow.shop/prd_u70c3f&apos;;
             } else {
-              alert(&quot;Un problème est survenu. Veuillez réessayer.&quot;);
+              alert(&apos;Un problème est survenu. Veuillez réessayer.&apos;);
               if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
             }
           }).catch(function(err) {
-            alert(&quot;Erreur réseau.&quot;);
+            alert(&apos;Erreur réseau.&apos;);
             if (btn) { btn.innerHTML = origHtml; btn.disabled = false; }
           });
         });
